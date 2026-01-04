@@ -1,8 +1,12 @@
 import type { Metadata } from 'next';
+import type { ReactNode } from 'react';
 import { Geist, Geist_Mono } from 'next/font/google';
 import './globals.css';
 import { Analytics } from '@vercel/analytics/next';
 import ThemeProvider from './components/theme/ThemeProvider';
+import ParticleBackground from './components/ParticleBackground';
+
+
 
 const geistSans = Geist({
 	variable: '--font-geist-sans',
@@ -76,13 +80,20 @@ export const metadata: Metadata = {
 export default function RootLayout({
 	children,
 }: Readonly<{
-	children: React.ReactNode;
+	children: ReactNode;
 }>) {
 	return (
 		<html lang="en" suppressHydrationWarning>
-			<body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+			<body className={`${geistSans.variable} ${geistMono.variable} antialiased relative`}>
 				<ThemeProvider attribute="class" defaultTheme="dark" enableSystem>
-					<div>{children}</div>
+					{/* Global Background Layer */}
+					<div className="fixed inset-0 z-0 pointer-events-none">
+						<div className="absolute inset-0 bg-gradient-to-br from-blue-300 to-purple-400 dark:from-purple-900/20 dark:to-blue-900/20" />
+						<div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(255,255,255,0.7),rgba(255,255,255,1))] dark:bg-[radial-gradient(circle_at_50%_50%,rgba(17,24,39,0.7),rgba(0,0,0,1))]" />
+						<ParticleBackground />
+					</div>
+
+					<div className="relative z-10">{children}</div>
 					<Analytics />
 				</ThemeProvider>
 			</body>

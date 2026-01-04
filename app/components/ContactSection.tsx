@@ -5,7 +5,7 @@ import ContactForm from './ContactForm';
 
 export default function ContactSection() {
 	return (
-		<section className="py-12 md:py-20 px-4 bg-white dark:bg-black">
+		<section className="py-12 md:py-20 px-4">
 			<div className="max-w-3xl mx-auto text-center">
 				<motion.h2
 					initial={{ opacity: 0, y: 20 }}

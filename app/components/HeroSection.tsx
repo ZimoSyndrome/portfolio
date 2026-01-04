@@ -10,11 +10,6 @@ export default function HeroSection() {
 			transition={{ duration: 1 }}
 			className="h-screen flex items-center justify-center relative overflow-hidden"
 		>
-			<div className="absolute inset-0 bg-gradient-to-br from-blue-300 to-purple-400 dark:from-purple-900/20 dark:to-blue-900/20" />
-			<div className="absolute inset-0">
-				<div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(255,255,255,0.7),rgba(255,255,255,1))] dark:bg-[radial-gradient(circle_at_50%_50%,rgba(17,24,39,0.7),rgba(0,0,0,1))]" />
-			</div>
-
 			<div className="relative z-10 text-center">
 				<motion.h1
 					initial={{ y: 50 }}
