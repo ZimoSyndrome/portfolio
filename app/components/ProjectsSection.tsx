@@ -11,7 +11,7 @@ const projects = [
 		summary:
 			'End-to-end pipeline for forecasting equity returns and volatility, evaluated with walk-forward validation and risk metrics.',
 		subtitle: 'ARIMA–GARCH · XGBoost · LSTM · Walk-Forward Validation',
-		image: '/code.jpg',
+		image: '/code2.jpg',
 		projectUrl: '#',
 		githubUrl: '#',
 	},

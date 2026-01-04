@@ -15,7 +15,8 @@ export default function HeroSection() {
 					initial={{ y: 50 }}
 					animate={{ y: 0 }}
 					transition={{ duration: 0.8, delay: 0.2 }}
-					className="text-4xl md:text-7xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-purple-600 dark:from-blue-400 dark:to-purple-600"
+					className="text-4xl md:text-7xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-gray-400 to-gray-600 dark:from-gray-400 dark:to-stone-500"
+					// text-4xl md:text-7xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-purple-600 dark:from-blue-400 dark:to-purple-600
 				>
 					Zimo Chen
 				</motion.h1>

@@ -88,10 +88,32 @@ export default function RootLayout({
 				<ThemeProvider attribute="class" defaultTheme="dark" enableSystem>
 					{/* Global Background Layer */}
 					<div className="fixed inset-0 z-0 pointer-events-none">
+						<div className="absolute inset-0 bg-gradient-to-br from-stone-100 to-orange-50 dark:from-gray-900 dark:to-blue-950" />
+						<div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(255,255,255,0.7),rgba(255,255,255,1))] dark:bg-[radial-gradient(circle_at_50%_50%,rgba(17,24,39,0.7),rgba(0,0,0,1))]" />
+						<ParticleBackground />
+					</div>
+
+					{/* default
+					
+					<div className="fixed inset-0 z-0 pointer-events-none">
 						<div className="absolute inset-0 bg-gradient-to-br from-blue-300 to-purple-400 dark:from-purple-900/20 dark:to-blue-900/20" />
 						<div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(255,255,255,0.7),rgba(255,255,255,1))] dark:bg-[radial-gradient(circle_at_50%_50%,rgba(17,24,39,0.7),rgba(0,0,0,1))]" />
 						<ParticleBackground />
 					</div>
+
+					 */}
+
+
+					 {/* off-white + deep navy
+					 					
+					<div className="fixed inset-0 z-0 pointer-events-none">
+						<div className="absolute inset-0 bg-gradient-to-br from-slate-100 to-zinc-200 dark:from-slate-900 dark:to-cyan-900/30" />
+						<div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(255,255,255,0.7),rgba(255,255,255,1))] dark:bg-[radial-gradient(circle_at_50%_50%,rgba(17,24,39,0.7),rgba(0,0,0,1))]" />
+						<ParticleBackground />
+					</div>
+					 
+					 
+					 */}
 
 					<div className="relative z-10">{children}</div>
 					<Analytics />
