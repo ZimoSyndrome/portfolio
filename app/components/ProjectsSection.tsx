@@ -7,27 +7,27 @@ import Link from 'next/link';
 const projects = [
 	{
 		id: 1,
-		title: 'E-Commerce Platform',
-		description: 'A modern e-commerce platform built with Next.js and Stripe',
+		title: 'Multi-Model Market Forecasting & Risk Engine',
+		summary:
+			'End-to-end pipeline for forecasting equity returns and volatility, evaluated with walk-forward validation and risk metrics.',
+		subtitle: 'ARIMA–GARCH · XGBoost · LSTM · Walk-Forward Validation',
 		image: '/code.jpg',
 	},
 	{
 		id: 2,
-		title: 'AI Chat Application',
-		description: 'Real-time chat application powered by OpenAI',
+		title: 'Rates Term-Structure & Derivatives Analytics Suite',
+		summary:
+			'Built SOFR forward curves and priced FRAs/swaps; analysed valuation impacts under yield-curve shifts.',
+		subtitle: 'SOFR Curves · FRAs · Interest-Rate Swaps',
 		image: '/laptop.jpg',
 	},
 	{
 		id: 3,
-		title: 'Task Management',
-		description: 'Collaborative task management tool with real-time updates',
+		title: 'Options Volatility & Risk-Neutral Distribution Lab',
+		summary:
+			'Computed implied vols and volatility surfaces, derived risk-neutral densities, and ran Monte Carlo under GBM/Heston.',
+		subtitle: 'Implied Volatility · Breeden–Litzenberger · Monte Carlo',
 		image: '/code.jpg',
-	},
-	{
-		id: 4,
-		title: 'Portfolio Generator',
-		description: 'Dynamic portfolio generator for developers',
-		image: '/laptop.jpg',
 	},
 ];
 
@@ -59,7 +59,8 @@ export default function ProjectsSection() {
 						<div className="absolute inset-0 bg-gradient-to-b from-transparent via-black/40 to-black/90 group-hover:to-black/95 transition-colors duration-300" />
 						<div className="absolute inset-0 p-6 flex flex-col justify-end">
 							<h3 className="text-xl font-bold mb-2 text-white">{project.title}</h3>
-							<p className="text-gray-200 mb-4 line-clamp-2">{project.description}</p>
+							<p className="text-gray-200 mb-2 line-clamp-2">{project.summary}</p>
+							<p className="text-xs md:text-sm text-gray-300/90 mb-4 line-clamp-1">{project.subtitle}</p>
 							<div className="flex gap-4">
 								<Link
 									href="#"

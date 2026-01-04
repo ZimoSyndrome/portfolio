@@ -22,15 +22,24 @@ export default function HeroSection() {
 					transition={{ duration: 0.8, delay: 0.2 }}
 					className="text-4xl md:text-7xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-purple-600 dark:from-blue-400 dark:to-purple-600"
 				>
-					John Doe
+					Zimo Chen
 				</motion.h1>
 				<motion.p
 					initial={{ y: 50, opacity: 0 }}
 					animate={{ y: 0, opacity: 1 }}
 					transition={{ duration: 0.8, delay: 0.4 }}
-					className="text-lg md:text-xl text-gray-600 dark:text-gray-300 mb-8 px-4"
+					className="text-lg md:text-xl text-gray-700 dark:text-gray-200 mb-2 px-4"
 				>
-					Full Stack Developer & UI/UX Enthusiast
+					Business Analytics undergraduate · Second major in Quantitative Finance
+				</motion.p>
+
+				<motion.p
+					initial={{ y: 50, opacity: 0 }}
+					animate={{ y: 0, opacity: 1 }}
+					transition={{ duration: 0.8, delay: 0.55 }}
+					className="text-sm md:text-base text-gray-500 dark:text-gray-400 px-4"
+				>
+					Specialising in finance and machine learning
 				</motion.p>
 			</div>
 
