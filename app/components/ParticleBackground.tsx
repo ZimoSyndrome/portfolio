@@ -35,7 +35,7 @@ export default function ParticleBackground() {
     // We can't easily react to theme changes inside the loop without refs or dependencies, 
     // effectively verifying theme in the loop or regenerating on theme change.
     // The dependency array [theme] handles regeneration.
-    const baseColor = theme === 'dark' ? '255, 255, 255' : '100, 116, 139';
+    const baseColor = theme === 'dark' ? '255, 255, 255' : '20, 20, 20';
 
     const handleResize = () => {
       canvas.width = window.innerWidth;

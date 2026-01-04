@@ -12,6 +12,8 @@ const projects = [
 			'End-to-end pipeline for forecasting equity returns and volatility, evaluated with walk-forward validation and risk metrics.',
 		subtitle: 'ARIMA–GARCH · XGBoost · LSTM · Walk-Forward Validation',
 		image: '/code.jpg',
+		projectUrl: '#',
+		githubUrl: '#',
 	},
 	{
 		id: 2,
@@ -20,6 +22,8 @@ const projects = [
 			'Built SOFR forward curves and priced FRAs/swaps; analysed valuation impacts under yield-curve shifts.',
 		subtitle: 'SOFR Curves · FRAs · Interest-Rate Swaps',
 		image: '/laptop.jpg',
+		projectUrl: '/sofr_report.pdf',
+		githubUrl: 'https://github.com/ZimoSyndrome/sofr-futures-swap-analytics',
 	},
 	{
 		id: 3,
@@ -28,6 +32,8 @@ const projects = [
 			'Computed implied vols and volatility surfaces, derived risk-neutral densities, and ran Monte Carlo under GBM/Heston.',
 		subtitle: 'Implied Volatility · Breeden–Litzenberger · Monte Carlo',
 		image: '/code.jpg',
+		projectUrl: '#',
+		githubUrl: '#',
 	},
 ];
 
@@ -41,7 +47,7 @@ export default function ProjectsSection() {
 				transition={{ duration: 0.6 }}
 				className="text-3xl md:text-4xl font-bold mb-8 md:mb-12 text-center text-gray-800 dark:text-white"
 			>
-				Featured Projects
+				My Projects
 			</motion.h2>
 
 			<div className="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -63,13 +69,17 @@ export default function ProjectsSection() {
 							<p className="text-xs md:text-sm text-gray-300/90 mb-4 line-clamp-1">{project.subtitle}</p>
 							<div className="flex gap-4">
 								<Link
-									href="#"
+									href={project.projectUrl}
+									target="_blank"         
+									rel="noopener noreferrer" 
 									className="text-sm px-4 py-2 bg-white/20 hover:bg-white/30 text-white rounded-full transition-all duration-300 backdrop-blur-sm"
 								>
 									View Project
 								</Link>
 								<Link
-									href="#"
+									href={project.githubUrl}  
+									target="_blank"           
+									rel="noopener noreferrer" 
 									className="text-sm px-4 py-2 bg-white hover:bg-gray-100 text-gray-900 rounded-full transition-all duration-300 backdrop-blur-sm"
 								>
 									GitHub
