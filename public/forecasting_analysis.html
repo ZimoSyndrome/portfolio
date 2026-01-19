@@ -7517,6 +7517,28 @@ a.anchor-link {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h1 id="Equity-Return-Forecasting-with-Statistical-and-Machine-Learning-Models">Equity Return Forecasting with Statistical and Machine Learning Models<a class="anchor-link" href="#Equity-Return-Forecasting-with-Statistical-and-Machine-Learning-Models">¶</a></h1><h2 id="Project-Overview">Project Overview<a class="anchor-link" href="#Project-Overview">¶</a></h2><p>This project studies the predictability of daily equity returns using a combination of
+classical time-series models and modern machine learning methods.</p>
+<p><strong>Asset:</strong> IBM<br/>
+<strong>Sample period:</strong> 2002-01-01 to 2024-12-31<br/>
+<strong>Frequency:</strong> Daily<br/>
+<strong>Target variable:</strong> Log returns</p>
+<p>The objective is not only to generate forecasts, but to evaluate:</p>
+<ul>
+<li>Whether linear models can adequately describe return dynamics</li>
+<li>Whether volatility clustering explains most of the dependence</li>
+<li>Whether machine learning models provide incremental predictive power</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <h1 id="Multi-Model-Market-Forecasting-&amp;-Risk-Engine">Multi-Model Market Forecasting &amp; Risk Engine<a class="anchor-link" href="#Multi-Model-Market-Forecasting-&amp;-Risk-Engine">¶</a></h1><p><strong>Industrial-Grade Two-Step ARIMA-GARCH Implementation</strong></p>
 <table>
 <thead>
@@ -7573,7 +7595,7 @@ a.anchor-link {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [1]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-python"><pre><span></span><span class="c1"># === GLOBAL CONFIGURATION ===</span>
@@ -7678,7 +7700,14 @@ a.anchor-link {
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <p><a id="data"></a></p>
-<h2 id="1.-Data-Ingestion-&amp;-Preprocessing">1. Data Ingestion &amp; Preprocessing<a class="anchor-link" href="#1.-Data-Ingestion-&amp;-Preprocessing">¶</a></h2>
+<h2 id="1.-Data-and-Preprocessing">1. Data and Preprocessing<a class="anchor-link" href="#1.-Data-and-Preprocessing">¶</a></h2><p>Daily adjusted prices are downloaded and transformed into log returns.
+Log returns are used because they are:</p>
+<ul>
+<li>Stationary in levels</li>
+<li>Scale-invariant</li>
+<li>Standard in empirical finance</li>
+</ul>
+<p>All models are estimated using the same return series to ensure comparability.</p>
 </div>
 </div>
 </div>
@@ -8090,7 +8119,16 @@ Modelling series length: 2513
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="A.2:-ARIMA(p,d,q)-Grid-Search-(Step-1-of-Two-Step)">A.2: ARIMA(p,d,q) Grid Search (Step 1 of Two-Step)<a class="anchor-link" href="#A.2:-ARIMA(p,d,q)-Grid-Search-(Step-1-of-Two-Step)">¶</a></h3><p>Using <code>statsmodels.tsa.arima.model.ARIMA</code> for the mean equation.</p>
+<h3 id="A.2:-ARIMA(p,d,q)-Grid-Search-(Step-1-of-Two-Step)">A.2: ARIMA(p,d,q) Grid Search (Step 1 of Two-Step)<a class="anchor-link" href="#A.2:-ARIMA(p,d,q)-Grid-Search-(Step-1-of-Two-Step)">¶</a></h3><h4 id="Mean-Dynamics:-ARIMA-Modelling">Mean Dynamics: ARIMA Modelling<a class="anchor-link" href="#Mean-Dynamics:-ARIMA-Modelling">¶</a></h4><p>ARIMA models are used to capture linear dependence in returns.
+Model selection is performed via grid search over (p, d, q) using AIC and BIC.</p>
+<p>Important assumptions:</p>
+<ul>
+<li>Finite memory</li>
+<li>Linear dynamics</li>
+<li>Single regime</li>
+</ul>
+<p>These assumptions are tested empirically rather than taken for granted.</p>
+<p>Using <code>statsmodels.tsa.arima.model.ARIMA</code> for the mean equation.</p>
 </div>
 </div>
 </div>
@@ -8267,7 +8305,7 @@ Modelling series length: 2513
 Dep. Variable:                 Return   No. Observations:                 2513
 Model:                 ARIMA(4, 0, 4)   Log Likelihood                6968.015
 Date:                Mon, 19 Jan 2026   AIC                         -13918.031
-Time:                        17:35:33   BIC                         -13865.568
+Time:                        18:16:26   BIC                         -13865.568
 Sample:                             0   HQIC                        -13898.989
                                - 2513                                         
 Covariance Type:                  opg                                         
@@ -8304,7 +8342,15 @@ Warnings:
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="A.3:-GARCH-on-ARIMA-Residuals-(Step-2-of-Two-Step)">A.3: GARCH on ARIMA Residuals (Step 2 of Two-Step)<a class="anchor-link" href="#A.3:-GARCH-on-ARIMA-Residuals-(Step-2-of-Two-Step)">¶</a></h3><p>Extract residuals from ARIMA, then fit GARCH(1,1) with different distributions.</p>
+<h3 id="A.3:-GARCH-on-ARIMA-Residuals-(Step-2-of-Two-Step)">A.3: GARCH on ARIMA Residuals (Step 2 of Two-Step)<a class="anchor-link" href="#A.3:-GARCH-on-ARIMA-Residuals-(Step-2-of-Two-Step)">¶</a></h3><h4 id="Volatility-Dynamics:-GARCH-Modelling">Volatility Dynamics: GARCH Modelling<a class="anchor-link" href="#Volatility-Dynamics:-GARCH-Modelling">¶</a></h4><p>Financial returns exhibit strong conditional heteroskedasticity.
+After fitting the ARIMA model, residuals are tested for ARCH effects.</p>
+<p>GARCH models are then fitted to:</p>
+<ul>
+<li>Remove variance dependence</li>
+<li>Capture volatility clustering</li>
+<li>Improve distributional assumptions via non-Gaussian innovations</li>
+</ul>
+<p>Extract residuals from ARIMA, then fit GARCH(1,1) with different distributions.</p>
 </div>
 </div>
 </div>
@@ -8533,7 +8579,7 @@ Distribution:      Standardized Skew Student's t   AIC:                         
 Method:                       Maximum Likelihood   BIC:                           8307.43
                                                    No. Observations:                 2511
 Date:                           Mon, Jan 19 2026   Df Residuals:                     2508
-Time:                                   17:35:33   Df Model:                            3
+Time:                                   18:16:26   Df Model:                            3
                                   Mean Model                                  
 ==============================================================================
                  coef    std err          t      P&gt;|t|        95.0% Conf. Int.
@@ -9218,6 +9264,26 @@ Trade frequency (realised): 0.1032
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <hr/>
+<h1 id="Machine-Learning-Models">Machine Learning Models<a class="anchor-link" href="#Machine-Learning-Models">¶</a></h1><p>Tree-based and neural network models are used to test whether
+nonlinear patterns improve out-of-sample performance.</p>
+<p>Key characteristics:</p>
+<ul>
+<li>Expanding-window training</li>
+<li>One-step-ahead forecasts</li>
+<li>Strict separation between training and test data</li>
+</ul>
+<p>These models are evaluated against classical benchmarks rather than in isolation.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<hr/>
 <h1 id="Part-B:-XGBoost">Part B: XGBoost<a class="anchor-link" href="#Part-B:-XGBoost">¶</a></h1>
 </div>
 </div>
@@ -9401,7 +9467,7 @@ Direction Acc: 44.44%
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">fc</span><span class="p">(</span><span class="n">out</span><span class="p">[:,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="p">:])</span>  <span class="c1"># last time step</span>
 
 <span class="c1"># -----------------------------</span>
-<span class="c1"># Config</span>
+<span class="c1"># Configurations</span>
 <span class="c1"># -----------------------------</span>
 <span class="n">LSTM_CONFIG</span> <span class="o">=</span> <span class="p">{</span>
     <span class="s2">"hidden_size"</span><span class="p">:</span> <span class="mi">32</span><span class="p">,</span>
@@ -10024,6 +10090,25 @@ LSTM                                     0.000132     0.008533     45.24%
 ✓ Winner (Direction): ARIMA(4,0,4)-GARCH(1,1)-skewt
 </pre>
 </div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h1 id="Conclusions-and-Limitations">Conclusions and Limitations<a class="anchor-link" href="#Conclusions-and-Limitations">¶</a></h1><p>Key findings:</p>
+<ul>
+<li>ARIMA models explain limited mean dependence in returns</li>
+<li>GARCH models successfully remove variance autocorrelation</li>
+<li>Residual serial dependence persists due to regime shifts and nonlinear dynamics</li>
+<li>Machine learning models do not consistently outperform benchmarks</li>
+</ul>
+<p>This outcome is expected and reflects market efficiency rather than model failure.
+The project emphasises explanation and robustness over overfitting and getting the 'best model' for predcictability.</p>
 </div>
 </div>
 </div>
