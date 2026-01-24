@@ -32,8 +32,8 @@ const projects = [
 			'Computed implied vols and volatility surfaces, derived risk-neutral densities, and ran Monte Carlo under GBM/Heston.',
 		subtitle: 'Implied Volatility · Breeden–Litzenberger · Monte Carlo',
 		image: '/code.jpg',
-		projectUrl: 'https://github.com/ZimoSyndrome/options-analytics-lab',
-		githubUrl: '#',
+		projectUrl: '#',
+		githubUrl: 'https://github.com/ZimoSyndrome/options-analytics-lab',
 	},
 ];
 
